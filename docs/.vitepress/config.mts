@@ -6,6 +6,7 @@ export default defineConfig({
   description: "api for neo",
   lang: 'zh-CN',
   lastUpdated: true,
+  base: '/final_nex_docs/',
   vite: {
     optimizeDeps: {
       exclude: [
