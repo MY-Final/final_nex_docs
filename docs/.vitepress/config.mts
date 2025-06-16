@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "final",
-  description: "api for neo",
+  description: "NEX 2.0 开发插件使用指南",
   lang: 'zh-CN',
   lastUpdated: true,
   base: '/final_nex_docs/',
@@ -25,13 +25,15 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
+      { text: 'NEX指南', link: '/nex-guide' },
       { text: '示例', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
-        text: '示例',
+        text: 'NEX 2.0 开发指南',
         items: [
+          { text: '使用指南', link: '/nex-guide' },
           { text: 'Markdown 示例', link: '/markdown-examples' },
           { text: 'API 示例', link: '/api-examples' }
         ]
