@@ -25,7 +25,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '示例', link: '/markdown-examples' }
+      { text: '示例', link: '/markdown-examples' },
+      { text: '组件', link: '/components' }
     ],
 
     sidebar: [
@@ -33,13 +34,14 @@ export default defineConfig({
         text: '示例',
         items: [
           { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'API 示例', link: '/api-examples' }
+          { text: 'API 示例', link: '/api-examples' },
+          { text: '组件示例', link: '/components' }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/MY-Final/final_nex_docs' }
     ],
     
     lastUpdated: {
@@ -73,6 +75,11 @@ export default defineConfig({
           }
         }
       }
+    },
+    
+    footer: {
+      message: '在 CC-BY-SA-4.0 许可下发布',
+      copyright: 'Copyright © 2025-2025 final'
     }
   }
 })

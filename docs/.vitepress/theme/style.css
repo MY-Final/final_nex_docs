@@ -68,6 +68,13 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-c-brand: #4fc08d;
+  --vp-c-brand-light: #59ccaa;
+  --vp-c-brand-lighter: #66d9bd;
+  --vp-c-brand-dark: #3aa976;
+  --vp-c-brand-darker: #2c8761;
+  --vp-c-brand-dimm: rgba(79, 192, 141, 0.08);
 }
 
 /**
@@ -135,5 +142,43 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/* 自定义页面样式 */
+.vp-doc a {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--vp-c-brand);
+  transition: color 0.25s, border-color 0.25s;
+}
+
+.vp-doc a:hover {
+  border-bottom: 1px solid var(--vp-c-brand-light);
+}
+
+.vp-doc strong {
+  color: var(--vp-c-brand-dark);
+}
+
+/* 特殊块样式 */
+.custom-block.tip {
+  border-color: var(--vp-c-brand);
+}
+
+/* 代码块样式 */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+}
+
+/* 首页特殊样式 */
+.VPHero .image-src {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .VPHero .image {
+    max-height: 180px;
+  }
 }
 
