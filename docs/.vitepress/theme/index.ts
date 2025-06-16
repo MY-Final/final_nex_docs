@@ -8,7 +8,6 @@ import {
   InjectionKey
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import CustomComponent from './components/CustomComponent.vue'
 
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import './style.css'
@@ -25,9 +24,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // 注册自定义组件
-    app.component('CustomComponent', CustomComponent)
-    
     // 添加中文国际化配置
     app.provide(InjectionKey, {
       locales: {

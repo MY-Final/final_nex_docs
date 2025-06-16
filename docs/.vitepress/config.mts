@@ -25,8 +25,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '示例', link: '/markdown-examples' },
-      { text: '组件', link: '/components' }
+      { text: '示例', link: '/markdown-examples' }
     ],
 
     sidebar: [
@@ -34,8 +33,7 @@ export default defineConfig({
         text: '示例',
         items: [
           { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'API 示例', link: '/api-examples' },
-          { text: '组件示例', link: '/components' }
+          { text: 'API 示例', link: '/api-examples' }
         ]
       }
     ],
