@@ -34,7 +34,8 @@ export default defineConfig({
         text: 'NEX 2.0 开发指南',
         items: [
           { text: '使用指南', link: '/nex-guide' },
-          { text: '全局对象 CTX', link: '/global-ctx' }
+          { text: '全局对象 CTX', link: '/global-ctx' },
+          { text: '首页拓展 PC', link: '/Homepage_Extension_PC' }
         ]
       }
     ],
