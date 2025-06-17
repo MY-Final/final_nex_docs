@@ -11,13 +11,16 @@ hero:
       text: 开始使用
       link: /nex-guide
     - theme: alt
-      text: API 示例
-      link: /api-examples
+      text: 全局对象 CTX
+      link: /global-ctx
 
 features:
   - title: 快速上手
     details: 从环境准备到插件开发，详尽的步骤说明帮助您迅速掌握NEX 2.0开发工具的使用
     icon: 🚀
+  - title: 全局对象 CTX
+    details: 提供系统、用户、界面、工具函数和接口等多种扩展点，帮助开发者快速实现业务功能
+    icon: 🔍
   - title: 多场景支持
     details: 涵盖首页、表单、列表、详情等多种场景的扩展开发，同时支持网页端和移动端
     icon: ⚡
