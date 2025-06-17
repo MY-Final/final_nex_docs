@@ -590,12 +590,3 @@ table {
 table th, table td {
   text-align: center !important;
 }
-.last-update {
-  text-align: right;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #888;
-}
-</style>
-
-<div class="last-update">最后更新：2023-06-25</div> 
