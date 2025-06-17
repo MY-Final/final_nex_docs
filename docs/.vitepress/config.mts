@@ -25,8 +25,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: 'NEX指南', link: '/nex-guide' },
-      { text: '全局对象', link: '/global-ctx' }
     ],
 
     sidebar: [

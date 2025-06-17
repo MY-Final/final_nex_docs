@@ -10,9 +10,7 @@ hero:
     - theme: brand
       text: 开始使用
       link: /nex-guide
-    - theme: alt
-      text: 全局对象 CTX
-      link: /global-ctx
+
 
 features:
   - title: 快速上手
