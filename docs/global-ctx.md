@@ -590,3 +590,7 @@ table {
 table th, table td {
   text-align: center !important;
 }
+
+</style>
+
+
