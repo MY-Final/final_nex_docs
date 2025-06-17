@@ -30,14 +30,23 @@
 
 </div>
 
+## 模块概览
 
-## 系统（system）✅
+NEX 2.0 全局对象 ctx 包含以下主要模块：
+
+1. **系统模块 (system)** ✅ - 系统环境、语言、时区等基础信息
+2. **用户模块 (user)** ✅ - 当前登录用户的身份与权限信息
+3. **界面模块 (ui)** ✅ - 提示框、确认框、页面导航等UI交互
+4. **工具函数模块 (util)** ✅ - 日志打印、定时器、数据检查等辅助功能
+5. **接口模块 (api)** ⚠️ - 表单操作、服务端请求等数据交互
+
+## 1. 系统模块 (system) ✅
 
 ::: info 系统分类
 系统分类提供了与当前系统环境相关的信息和功能，包括语言、时区、运行环境等基础信息，帮助开发者适配不同的系统环境。
 :::
 
-### 属性
+### 1.1 属性
 
 | 扩展点 | apiKey | 使用场景 | 读写性 |
 |:------:|:------:|:--------:|:------:|
@@ -84,7 +93,7 @@ if (ctx.system.systemType === 'crm') {
 }
 ```
 
-### 函数
+### 1.2 函数
 
 | 扩展点 | 函数签名 | 使用场景 |
 |:------:|:--------:|:--------:|
@@ -109,13 +118,13 @@ const now = ctx.system.getCurrentDate();
 const dateWithFormat = ctx.system.getCurrentDate('YYYY-MM-DD');
 ```
 
-## 用户（user）✅
+## 2. 用户模块 (user) ✅
 
 ::: info 用户分类
 用户分类提供了当前登录用户的相关信息，包括基本信息、权限信息和组织信息等，便于开发者根据用户身份进行个性化功能开发。
 :::
 
-### 属性
+### 2.1 属性
 
 | 扩展点 | apiKey | 使用场景 | 读写性 |
 |:------:|:------:|:--------:|:------:|
@@ -160,13 +169,13 @@ const email = user.email;
 const phoneNumber = user.phoneNumber;
 ```
 
-## 界面（ui）✅
+## 3. 界面模块 (ui) ✅
 
 ::: info 界面分类
 界面分类提供了丰富的交互组件和页面导航功能，帮助开发者创建友好的用户界面，提升用户体验。
 :::
 
-### 函数
+### 3.1 函数
 
 | 扩展点 | 函数签名 | 使用场景 |
 |:------:|:--------:|:--------:|
@@ -354,13 +363,13 @@ ctx.ui.navigatePageTo({
 });
 ```
 
-## 工具函数（util）✅
+## 4. 工具函数模块 (util) ✅
 
 ::: info 工具函数分类
 工具函数分类提供了常用的辅助功能，如日志打印、定时器和数据检查等，帮助开发者进行调试和数据处理。
 :::
 
-### 函数
+### 4.1 函数
 
 | 扩展点 | 函数签名 | 使用场景 |
 |:------:|:--------:|:--------:|
@@ -439,7 +448,7 @@ ctx.util.isEmpty([1, 2]); // 返回 false
 ctx.util.isEmpty({name: 'test'}); // 返回 false
 ```
 
-## 接口（api）⚠️
+## 5. 接口模块 (api) ⚠️
 
 ::: info 接口分类
 接口分类提供了与后端服务交互的能力，包括表单操作和服务端请求等，使开发者能够轻松实现数据交互和业务流程。
@@ -449,7 +458,7 @@ ctx.util.isEmpty({name: 'test'}); // 返回 false
 接口部分标记为⚠️是因为这些API在某些环境下可能受到限制，或者需要特定的权限才能调用。在使用前请确保已经获得了相应的访问权限，并在开发过程中进行充分测试。
 :::
 
-### 函数
+### 5.1 函数
 
 | 扩展点 | 函数签名 | 使用场景 |
 |:------:|:--------:|:--------:|
@@ -518,7 +527,7 @@ ctx.api.openCloneForm('opportunity', 'opportunity_001');
 
 | 扩展点 | 函数签名 | 使用场景 |
 |:------:|:--------:|:--------:|
-| 发送服务端请求 | `request(options)` | 调用服务端接口（只允许调用开放的接口或自定义接口） |
+| 发送服务端请求 | `request({url,headers, methd, data})` | 调用服务端接口（只允许调用开放的接口或自定义接口） |
 
 **参数说明**：
 ```js
@@ -531,66 +540,26 @@ ctx.api.openCloneForm('opportunity', 'opportunity_001');
  * @param {Object} [options.data] - 请求数据
  * @returns {Promise} 返回Promise对象
  */
-// GET请求示例
+// 实际业务场景示例：获取客户详情并设置表单数据
 ctx.api.request({
-  url: '/api/customers'
-}).then(response => {
-  ctx.util.log('获取客户列表成功', response);
-  renderCustomerList(response.data);
-}).catch(error => {
-  ctx.util.error('获取客户列表失败', error);
-  ctx.ui.showToast('error', '数据加载失败');
-});
-
-// POST请求示例
-ctx.api.request({
-  url: '/api/customers',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  data: {
-    name: '新客户',
-    industry: '科技',
-    level: 'A'
-  }
-}).then(response => {
-  ctx.util.log('创建客户成功', response);
-  ctx.ui.showToast('success', '客户创建成功');
-}).catch(error => {
-  ctx.util.error('创建客户失败', error);
-  ctx.ui.showToast('error', '客户创建失败');
+    url: `/rest/data/v2.0/xobjects/account/${acc_id}`,
+    method: 'GET'
+}).then(function (res) {
+    const payload = res?.data?.data?.data;
+    const accountComment = payload?.comment;
+    const ownerId = payload?.ownerId;
+    if(ownerId)
+    {
+        e.cmp.setFormData({customItem165__c: ownerId})
+    }
+    if (accountComment) {
+        ctx.api.info("备注：" + accountComment);
+        e.cmp.setFormData({ customItem164__c: accountComment });
+    } else {
+        ctx.api.error("没有找到备注");
+        e.cmp.setFormData({ customItem164__c: '' });
+    }
+}).catch(function (err) {
+    ctx.api.error("请求失败：" + err.message);
 });
 ```
-
-<style>
-.ctx-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.update-badge {
-  background-color: #646cff;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.features {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
-  padding-left: 1.5rem;
-}
-table {
-  margin: 1.5rem 0;
-}
-table th, table td {
-  text-align: center !important;
-}
-
-</style>
-
-
