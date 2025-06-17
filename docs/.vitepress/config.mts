@@ -34,8 +34,20 @@ export default defineConfig({
         text: 'NEX 2.0 开发指南',
         items: [
           { text: '使用指南', link: '/nex-guide' },
-          { text: '全局对象 CTX', link: '/global-ctx' },
-          { text: '首页拓展 PC', link: '/Homepage_Extension_PC' }
+          // { text: '全局对象 CTX', link: '/global-ctx' },
+          // { text: '首页拓展 PC', link: '' }
+        ]
+      },
+      {
+        text: '全局对象 CTX',
+        items: [
+          { text: 'CTX的使用', link: '/global-ctx' },
+        ]
+      },
+      {
+        text: '首页拓展',
+        items: [
+          { text: 'PC端', link: '/Homepage_Extension_PC' },
         ]
       }
     ],
@@ -79,7 +91,7 @@ export default defineConfig({
     
     footer: {
       message: '在 CC-BY-SA-4.0 许可下发布',
-      copyright: 'Copyright © 2025-2025 final'
+      copyright: 'Copyright © 2025-forever final'
     }
   }
 })
