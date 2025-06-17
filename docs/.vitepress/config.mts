@@ -26,7 +26,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'NEX指南', link: '/nex-guide' },
-      { text: '示例', link: '/markdown-examples' }
+      { text: '全局对象', link: '/global-ctx' }
     ],
 
     sidebar: [
@@ -34,9 +34,7 @@ export default defineConfig({
         text: 'NEX 2.0 开发指南',
         items: [
           { text: '使用指南', link: '/nex-guide' },
-          { text: '全局对象 CTX', link: '/global-ctx' },
-          { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'API 示例', link: '/api-examples' }
+          { text: '全局对象 CTX', link: '/global-ctx' }
         ]
       }
     ],
