@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "final"
   text: "NEX 2.0 开发插件使用指南"
-  tagline: 为开发者提供全面、实用的销售易NEX 2.0插件开发参考
+  tagline: 为开发者提供全面、实用的NEX 2.0插件开发参考
   actions:
     - theme: brand
       text: 开始使用
