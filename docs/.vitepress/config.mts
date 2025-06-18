@@ -47,6 +47,25 @@ export default defineConfig({
         items: [
           { text: 'PC端', link: '/Homepage_Extension_PC' },
         ]
+      },
+      // {
+      //   text: '表单页扩展',
+      //   items: [
+      //     { text: 'PC端', link: '/Form_page_extensions_PC' },
+      //   ]
+      // }
+      {
+        text: '表单页扩展',
+        items: [
+          {
+            text: 'PC端',
+            items: [
+              { text: '表单页', link: '/Form_page' },
+              { text: '表单头部', link: '/Form_header' },
+              { text: '表单底部按钮', link: '/Form_footer_button' },
+            ]
+          }
+        ]
       }
     ],
 
