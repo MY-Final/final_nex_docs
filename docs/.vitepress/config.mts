@@ -44,6 +44,7 @@ export default defineConfig({
       },
       {
         text: '首页拓展',
+        collapsed: true,
         items: [
           { text: 'PC端', link: '/Homepage_Extension_PC' },
         ]
@@ -59,10 +60,12 @@ export default defineConfig({
         items: [
           {
             text: 'PC端',
+            collapsed: true,
             items: [
               { text: '表单页', link: '/Form_page' },
               { text: '表单头部', link: '/Form_header' },
               { text: '表单底部按钮', link: '/Form_footer_button' },
+              { text: '实体表单', link: '/Entity_form' },
             ]
           }
         ]
@@ -109,6 +112,12 @@ export default defineConfig({
     footer: {
       message: '在 CC-BY-SA-4.0 许可下发布',
       copyright: 'Copyright © 2025-forever final'
+    },
+    
+    // 目录配置
+    outline: {
+      level: [2, 3], // 显示2级和3级标题
+      label: '本页目录'
     }
   }
 })
